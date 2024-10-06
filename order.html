@@ -166,7 +166,7 @@
                   </div>
               </div>
   
-              <div class="order-track-step" id="order-processed-step">
+              <div class="order-track-step my-5" id="order-processed-step">
                   <div class="order-track-status">
                       <span class="order-track-status-dot"></span>
                       <span class="order-track-status-line"></span>
@@ -177,7 +177,7 @@
                   </div>
               </div>
   
-              <div id="stopover-steps">
+              <div id="stopover-steps" class="order-track-step">
                   <!-- Dynamic stopover steps will be inserted here -->
               </div>
   
@@ -448,7 +448,8 @@ function populateTrackingDetails() {
   if (trackingData.stopovers.length > 0) {
     trackingData.stopovers.forEach((stopover, index) => {
       const stopOverDate = new Date(stopover.stopoverDate).toLocaleDateString();
-      const stopoverStep = document.createElement('div');
+      const stopoverStep = document.getElementById('stopover-steps');
+      const deliveryoverStep = document.getElementById('delivery-step');
       stopoverStep.classList.add('order-track-step');
       stopoverStep.setAttribute('id', `stopover-step-${index}`);
       stopoverStep.innerHTML = `
@@ -486,7 +487,7 @@ function populateTrackingDetails() {
         `;
         
         // Append the delivery step to the container
-        stopoverStepsContainer.appendChild(deliveryStep);
+        deliveryoverStep.appendChild(deliveryStep);
         
         // Set grey for delivery step if tracking status is pending
         if (trackingData.trackingStatus !== 'Delivered') {
@@ -514,7 +515,7 @@ function populateTrackingDetails() {
       </div>
     `;
   
-    stopoverStepsContainer.appendChild(deliveryStep);
+    deliveryoverStep.appendChild(deliveryStep);
     setGreyStep('delivery-step');
     deliveryStatus.textContent = 'Order awaiting delivery';
   }
