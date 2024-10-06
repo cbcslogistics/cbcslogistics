@@ -640,7 +640,7 @@ SLC, UT 84104</p>
     trackButton.setAttribute('disabled', true); // Disable the button to prevent multiple clicks
 
     // Make the API call
-    fetch(`http://localhost:3000/trackings/${trackingId}`)
+    fetch(`https://tracking-wxnh.onrender.com/trackings/${trackingId}`)
         .then(response => {
             // Revert button to original state
             trackButton.innerHTML = 'Track & Trace';
