@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cross Border Cargo Shipping Logistics</title>
+     <title>CBCS - Logistics Company</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Cross Border Cargo Shipping Logistics" name="keywords">
-    <meta content="Cross Border Cargo Shipping Logistics" name="description">
+    <meta content="Logistics Company" name="keywords">
+    <meta content="Logistics Company" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -31,7 +31,7 @@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-phone-alt mr-2"></i>+1 (251)-314-0461</small>
+                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
                     <small class="px-3">|</small>
                     <small><i class="fa fa-envelope mr-2"></i>info@cbcslogistics.com</small>
                 </div>
@@ -71,14 +71,19 @@
             <h1 class="text-white display-3 mb-5">Logistics Services</h1>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
                 <div class="input-group">
-                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
+                    <input type="text" id="trackingId" class="form-control border-light" style="padding: 30px;" placeholder="Enter your order ID to track ">
                     <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Track & Trace</button>
+                        <button id="trackButton" class="btn btn-primary px-3">Track & Trace</button>
+                        <div id="loadingSpinner" class="spinner-border text-light" style="display: none; width: 1.5rem; height: 1.5rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
                 </div>
+                <div id="errorMessage" class="text-danger mt-3" style="display: none;"></div>
             </div>
         </div>
     </div>
+    
     <!-- Header End -->
 
 
@@ -95,14 +100,14 @@
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
                     <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                    <div class="d-flex align-items-center pt-2">
+                    <p class="mb-4">At our company, we prioritize speed, safety, and reliability. Our logistics solutions are designed to meet your needs efficiently while ensuring the secure transport of your goods. With advanced tracking systems and a dedicated team, we provide real-time updates and peace of mind throughout the shipping process.</p>
+                    <!-- <div class="d-flex align-items-center pt-2">
                         <button type="button" class="btn-play" data-toggle="modal"
                             data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -133,7 +138,7 @@
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
                     <h1 class="mb-4">Request A Free Quote</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <p class="mb-4">At our company, we prioritize speed, safety, and reliability. Our logistics solutions are designed to meet your needs efficiently while ensuring the secure transport of your goods. With advanced tracking systems and a dedicated team, we provide real-time updates and peace of mind throughout the shipping process.</p>
                     <div class="row">
                         <div class="col-sm-4">
                             <h1 class="text-primary mb-2" data-toggle="counter-up">225</h1>
@@ -191,7 +196,7 @@
                         <i class="fa fa-2x fa-plane text-dark pr-3"></i>
                         <h6 class="text-white font-weight-medium m-0">Air Freight</h6>
                     </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <p>We provide fast and dependable air freight solutions tailored to your needs. Our network ensures your shipments reach their destination on time, no matter the distance.</p>
                     <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center mb-5">
@@ -199,7 +204,7 @@
                         <i class="fa fa-2x fa-ship text-dark pr-3"></i>
                         <h6 class="text-white font-weight-medium m-0">Ocean Freight</h6>
                     </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <p>Our ocean freight services offer cost-effective and flexible shipping options for large volumes. Enjoy peace of mind knowing your cargo is in safe hands while it travels across the seas.</p>
                     <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center mb-5">
@@ -207,7 +212,7 @@
                         <i class="fa fa-2x fa-truck text-dark pr-3"></i>
                         <h6 class="text-white font-weight-medium m-0">Land Transport</h6>
                     </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <p>We offer a range of land transport solutions that ensure your goods are delivered efficiently and safely. Whether it’s local or long-distance, we’ve got you covered.</p>
                     <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center mb-5">
@@ -215,12 +220,13 @@
                         <i class="fa fa-2x fa-store text-dark pr-3"></i>
                         <h6 class="text-white font-weight-medium m-0">Cargo Storage</h6>
                     </div>
-                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <p>Our cargo storage facilities are designed to meet your needs with safety and convenience. We offer flexible storage options to ensure your goods are protected and accessible when you need them.</p>
                     <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Services End -->
 
 
@@ -234,7 +240,7 @@
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h6 class="text-primary text-uppercase font-weight-bold">Why Choose Us</h6>
                     <h1 class="mb-4">Faster, Safe and Trusted Logistics Services</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <p class="mb-4">We pride ourselves on being leaders in the logistics industry, offering innovative solutions tailored to your unique requirements. Our experienced team is committed to delivering the highest standards of service, ensuring that your shipments arrive on time and in perfect condition.</p>
                     <ul class="list-inline">
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6></li>
@@ -530,8 +536,9 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+1 (251)-314-0461</p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>1825 S 4700 W
+SLC, UT 84104</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>801.686.4800</p>
                         <p><i class="fa fa-envelope mr-2"></i>info@cbcslogistics.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -553,7 +560,7 @@
             </div>
             <div class="col-lg-5 col-md-6 mb-5">
                 <h3 class="text-primary mb-4">Newsletter</h3>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <p>Subscribe to receive the latest news, exclusive offers, and updates right to your inbox. Join our community and never miss out on what’s happening!</p>
                 <div class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
@@ -571,7 +578,7 @@
                 <p class="m-0 text-white">&copy; <a href="#">Cbcslogistics</a>. All Rights Reserved. 
 				
 				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-				Designed by <a href="#">Spidermonkey</a>
+				Designed by <a href="#">CBCS Technology</a>
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">
@@ -613,6 +620,56 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById('trackButton').addEventListener('click', function() {
+    const trackingId = document.getElementById('trackingId').value;
+    const errorMessage = document.getElementById('errorMessage');
+    const trackButton = document.getElementById('trackButton');
+
+    // Clear previous error messages
+    errorMessage.style.display = 'none';
+
+    if (!trackingId) {
+        errorMessage.textContent = 'Please enter a tracking ID.';
+        errorMessage.style.display = 'block';
+        return;
+    }
+
+    // Change button to show loading spinner
+    trackButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+    trackButton.setAttribute('disabled', true); // Disable the button to prevent multiple clicks
+
+    // Make the API call
+    fetch(`http://localhost:3000/trackings/${trackingId}`)
+        .then(response => {
+            // Revert button to original state
+            trackButton.innerHTML = 'Track & Trace';
+            trackButton.removeAttribute('disabled'); // Re-enable the button
+
+            if (!response.ok) {
+                throw new Error('Tracking ID not found.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Save the response to session storage
+            sessionStorage.setItem('trackingDetails', JSON.stringify(data));
+
+            // Redirect to the tracking details page
+            window.location.href = 'order.html';
+        })
+        .catch(error => {
+            // Handle errors
+            errorMessage.textContent = error.message;
+            errorMessage.style.display = 'block';
+
+            // Revert button to original state
+            trackButton.innerHTML = 'Track & Trace';
+            trackButton.removeAttribute('disabled'); // Re-enable the button
+        });
+});
+
+     </script>
 </body>
 
 </html>

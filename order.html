@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-     <title>CBCS - Logistics Company</title>
+    <title>CBCS - Logistics Company</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Logistics Company" name="keywords">
     <meta content="Logistics Company" name="description">
@@ -24,7 +24,75 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
 
+:root {
+  --melorraOrange: #f05a00;
+  --blueShade1: #2c3e50;
+  --blueShade2: #34495e;
+  --boxShadowLight1: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --boxShadowDark1: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --greyShade: #bdc3c7;
+}
+
+.order-track {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  border-top: 1px dashed var(--blueShade1);
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all .3s height 0.3s;
+  transform-origin: top center;
+}
+
+.order-track-step {
+  display: flex;
+  height: 7rem;
+}
+
+.order-track-step:last-child {
+  overflow: hidden;
+  height: 4rem;
+}
+
+.order-track-step:last-child .order-track-status span:last-of-type {
+  display: none;
+}
+
+.order-track-status {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.order-track-status-dot {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--melorraOrange); /* Default to orange */
+}
+
+.order-track-status-line {
+  display: block;
+  margin: 0 auto;
+  width: 2px;
+  height: 7rem;
+  background: var(--melorraOrange); /* Default to orange */
+}
+
+.order-track-text-stat {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.order-track-text-sub {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+</style>
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark">
@@ -54,7 +122,7 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
@@ -67,12 +135,12 @@
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid mb-5">
         <div class="container text-center py-5">
-            <h1 class="text-white display-3">About</h1>
-            <div class="d-inline-flex align-items-center text-white">
+            <h1 class="text-white display-3">Tracking Details</h1>
+            <!-- <div class="d-inline-flex align-items-center text-white">
                 <p class="m-0"><a class="text-white" href="">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
-                <p class="m-0">About</p>
-            </div>
+                <p class="m-0">Tracking Details</p>
+            </div> -->
         </div>
     </div>
     <!-- Header End -->
@@ -80,45 +148,46 @@
 
     <!-- About Start -->
     <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
-                    <div class="bg-primary text-dark text-center p-4">
-                        <h3 class="m-0">25+ Years Experience</h3>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
-                    <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
-                    <p class="mb-4">At our company, we prioritize speed, safety, and reliability. Our logistics solutions are designed to meet your needs efficiently while ensuring the secure transport of your goods. With advanced tracking systems and a dedicated team, we provide real-time updates and peace of mind throughout the shipping process.</p>
-                    <!-- <div class="d-flex align-items-center pt-2">
-                        <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <!-- Video Modal -->
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>        
-                        <!-- 16:9 aspect ratio -->
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="container py-5 px-3">
+          <figure>
+              <figcaption>
+                  <h4>Tracking Details</h4>
+              </figcaption>
+          </figure>
+          <div class="order-track m-auto pb-4">
+              <div class="order-track-step" id="order-received-step">
+                  <div class="order-track-status">
+                      <span class="order-track-status-dot"></span>
+                      <span class="order-track-status-line"></span>
+                  </div>
+                  <div class="order-track-text">
+                      <p class="order-track-text-stat">Order Received</p>
+                      <span class="order-track-text-sub" id="order-received-date"></span>
+                  </div>
+              </div>
+  
+              <div class="order-track-step" id="order-processed-step">
+                  <div class="order-track-status">
+                      <span class="order-track-status-dot"></span>
+                      <span class="order-track-status-line"></span>
+                  </div>
+                  <div class="order-track-text">
+                      <p class="order-track-text-stat" id="order-processed-add"></p>
+                      <span class="order-track-text-sub" id="order-processed-date"></span>
+                  </div>
+              </div>
+  
+              <div id="stopover-steps">
+                  <!-- Dynamic stopover steps will be inserted here -->
+              </div>
+  
+              <div id="delivery-step" class="order-track-step">
+                  <!-- Delivery Step will be inserted here -->
+              </div>
+          </div>
+      </div>
+  </div>
+  
     <!-- About End -->
 
 
@@ -132,7 +201,7 @@
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h6 class="text-primary text-uppercase font-weight-bold">Why Choose Us</h6>
                     <h1 class="mb-4">Faster, Safe and Trusted Logistics Services</h1>
-                    <p class="mb-4">We pride ourselves on being leaders in the logistics industry, offering innovative solutions tailored to your unique requirements. Our experienced team is committed to delivering the highest standards of service, ensuring that your shipments arrive on time and in perfect condition.</p>
+                    <p class="mb-4">At our company, we prioritize speed, safety, and reliability. Our logistics solutions are designed to meet your needs efficiently while ensuring the secure transport of your goods. With advanced tracking systems and a dedicated team, we provide real-time updates and peace of mind throughout the shipping process.</p>
                     <ul class="list-inline">
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
                         <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6></li>
@@ -320,5 +389,144 @@ SLC, UT 84104</p>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+<script>
 
+// const trackingData = {
+//     "trackingId": "ZQWAN",
+//     "fromAddress": "132, My Street,: Bigtown BG23 4YZ: England.",
+//     "deliveryAddress": "",
+//     "fromDate": "2024-10-04T05:19:52.000Z",
+//     "deliveryDate": null,
+//     "trackingStatus": "complete", // Assume it's pending for now
+//     "stopovers": [
+//       "132, My Street,: Bigtown BG23 4YZ: England.",
+//       "132, My Street,: Bigtown BG23 4YZ: France.",
+//       "132, My Street,: Bigtown BG23 4YZ: Spain."
+//     ]
+//   };
+
+function populateTrackingDetails() {
+    // Retrieve the tracking details from session storage
+  const trackingData = JSON.parse(sessionStorage.getItem('trackingDetails'));
+  
+  // Get references to relevant elements
+  const fromDate = new Date(trackingData.fromDate).toLocaleDateString();
+  const fromAdd = trackingData.fromAddress
+  const stopoverStepsContainer = document.getElementById('stopover-steps');
+  const deliveryStepContainer = document.getElementById('delivery-step');
+  const deliveryStatus = document.getElementById('delivery-status');
+  document.getElementById('order-processed-add').textContent = `Order left pickup location: ${fromAdd}`;
+  document.getElementById('order-received-date').textContent = fromDate;
+  document.getElementById('order-processed-date').textContent = fromDate;
+  // Function to set the color of steps
+  function setStepColor(stepId, color) {
+    const step = document.getElementById(stepId);
+    if (step) {
+      step.querySelector('.order-track-status-dot').style.backgroundColor = color;
+      step.querySelector('.order-track-status-line').style.backgroundColor = color;
+    }
+  }
+  
+  // Default grey step setup
+  function setGreyStep(stepId) {
+    setStepColor(stepId, '#bdc3c7'); // Grey color
+  }
+  
+  // Orange step setup
+  function setOrangeStep(stepId) {
+    setStepColor(stepId, '#f05a00'); // Orange color
+  }
+  
+  // Update Order Received and Order Processed with fromDate
+
+  
+  // Set the initial steps (Order Received and Order Processed) to orange
+  setOrangeStep('order-received-step');
+  setOrangeStep('order-processed-step');
+  
+  // Add stopover steps dynamically and handle color changes
+  if (trackingData.stopovers.length > 0) {
+    trackingData.stopovers.forEach((stopover, index) => {
+      const stopOverDate = new Date(stopover.stopoverDate).toLocaleDateString();
+      const stopoverStep = document.createElement('div');
+      stopoverStep.classList.add('order-track-step');
+      stopoverStep.setAttribute('id', `stopover-step-${index}`);
+      stopoverStep.innerHTML = `
+        <div class="order-track-status">
+          <span class="order-track-status-dot"></span>
+          <span class="order-track-status-line"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Arrived at: ${stopover.stopoverAddress}</p>
+          <span class="order-track-text-sub">${stopOverDate}</span>
+        </div>
+      `;
+      
+      // Append the stopover step to the container
+      stopoverStepsContainer.appendChild(stopoverStep);
+      
+      // Set this stopover step to orange
+      setOrangeStep(`stopover-step-${index}`);
+      
+      // If it's the last stopover, ensure delivery step appears with a grey line
+      if (index === trackingData.stopovers.length - 1) {
+        // Add grey line from last stopover to delivery
+        const deliveryStep = document.createElement('div');
+        deliveryStep.classList.add('order-track-step');
+        deliveryStep.setAttribute('id', 'delivery-step');
+        deliveryStep.innerHTML = `
+          <div class="order-track-status">
+            <span class="order-track-status-dot"></span>
+            <span class="order-track-status-line"></span>
+          </div>
+          <div class="order-track-text">
+            <p class="order-track-text-stat" id="delivery-status">'Order awaiting delivery</p>
+            <span class="order-track-text-sub">Not Delivered Yet</span>
+          </div>
+        `;
+        
+        // Append the delivery step to the container
+        stopoverStepsContainer.appendChild(deliveryStep);
+        
+        // Set grey for delivery step if tracking status is pending
+        if (trackingData.trackingStatus !== 'Delivered') {
+          setGreyStep('delivery-step');
+          deliveryStatus.textContent = 'Order awaiting delivery';
+        } else {
+          setOrangeStep('delivery-step');
+          deliveryStatus.textContent = 'Order Delivered';
+        }
+      }
+    });
+  } else {
+    // If there are no stopovers, make delivery grey
+    const deliveryStep = document.createElement('div');
+    deliveryStep.classList.add('order-track-step');
+    deliveryStep.setAttribute('id', 'delivery-step');
+    deliveryStep.innerHTML = `
+      <div class="order-track-status">
+        <span class="order-track-status-dot"></span>
+        <span class="order-track-status-line"></span>
+      </div>
+      <div class="order-track-text">
+        <p class="order-track-text-stat" id="delivery-status">Order awaiting deliver</p>
+        <span class="order-track-text-sub">Not Delivered Yet</span>
+      </div>
+    `;
+  
+    stopoverStepsContainer.appendChild(deliveryStep);
+    setGreyStep('delivery-step');
+    deliveryStatus.textContent = 'Order awaiting delivery';
+  }
+  
+  // If trackingStatus is complete, update the delivery step to orange (this will indicate delivery is done)
+  if (trackingData.trackingStatus === "complete") {
+    setOrangeStep('delivery-step');
+    deliveryStatus.textContent = 'Order Delivered';
+  }
+}
+window.onload = function() {
+    populateTrackingDetails();
+};
+  </script>
 </html>
